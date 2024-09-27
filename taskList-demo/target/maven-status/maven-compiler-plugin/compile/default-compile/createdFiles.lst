@@ -1,0 +1,3 @@
+com\demo\model\Task.class
+com\demo\action\TaskAction.class
+com\demo\dao\TaskDao.class

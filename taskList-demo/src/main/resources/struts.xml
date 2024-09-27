@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+
+    <package name="tasklist" namespace="/" extends="struts-default,json-default">
+
+<!--        <action name="list" class="com.demo.action.TaskAction" method="list">-->
+<!--            <result name="success">/index.jsp</result>-->
+<!--        </action>-->
+
+<!--        <action name="add" class="com.demo.action.TaskAction" method="add">-->
+<!--            <result name="input">/add.jsp</result>-->
+<!--            <result name="success" type="redirectAction">list</result>-->
+<!--        </action>-->
+
+<!--        <action name="edit" class="com.demo.action.TaskAction" method="edit">-->
+<!--            <result name="input">/edit.jsp</result>-->
+<!--            <result name="success" type="redirectAction">list</result>-->
+<!--        </action>-->
+
+<!--        <action name="delete" class="com.demo.action.TaskAction" method="delete">-->
+<!--            <result name="success" type="redirectAction">list</result>-->
+<!--        </action>-->
+
+        <action name="api/createTask" class="com.demo.action.CreateTaskAction" method="add">
+            <result type="json">/WEB-INF/success.jsp</result>
+            <result name="error" type="json">/WEB-INF/error.jsp</result>
+        </action>
+
+        <action name="api/listTask" class="com.demo.action.ListTaskAction" method="getAll">
+            <result type="json">/WEB-INF/success.jsp</result>
+            <result name="error" type="json">/WEB-INF/error.jsp</result>
+        </action>
+        <action name="api/editTask" class="com.demo.action.UpdateAction" method="update">
+            <result type="json">/WEB-INF/success.jsp</result>
+            <result name="error" type="json">/WEB-INF/error.jsp</result>
+        </action>
+
+        <action name="api/updateTask" class="com.demo.action.UpdateAction" method="update">
+            <result type="json">/WEB-INF/success.jsp</result>
+            <result name="error" type="json">/WEB-INF/error.jsp</result>
+        </action>
+
+        <action name="index" class="com.demo.action.ListTaskAction" method="delete">
+<!--            <result name="success">/jsp/index.jsp</result>-->
+            <result type="json">/WEB-INF/success.jsp</result>
+            <result name="error" type="json">/WEB-INF/error.jsp</result>
+        </action>
+
+    </package>
+</struts>
